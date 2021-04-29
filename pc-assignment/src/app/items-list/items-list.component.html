@@ -1,0 +1,51 @@
+<div class="total-width">
+  <table mat-table class="left" [style.width]="resizeTable?'75%':'100%'"
+    [dataSource]="dataSource | itemFilter: searchText">
+
+    <ng-container matColumnDef="date">
+      <th mat-header-cell *matHeaderCellDef> Date </th>
+      <td mat-cell *matCellDef="let element" class="color-grey">
+        <span *ngIf="element.date"> {{element.date}}</span>
+        <span *ngIf="!element.date">
+          <mat-icon>all_out</mat-icon>
+        </span>
+      </td>
+    </ng-container>
+
+    <ng-container matColumnDef="listName">
+      <th mat-header-cell *matHeaderCellDef> List Name </th>
+      <td mat-cell *matCellDef="let element">
+        <span style="font-weight: bold;" [style.color]="!element.date?'#00ccff':'balck'"> {{element.listName}}</span>
+      </td>
+    </ng-container>
+
+    <ng-container matColumnDef="entitiesNo">
+      <th mat-header-cell *matHeaderCellDef> No. Of Entities </th>
+      <td mat-cell *matCellDef="let element"> {{element.entitiesNo}} </td>
+    </ng-container>
+
+    <ng-container matColumnDef="actions">
+      <th mat-header-cell *matHeaderCellDef> Actions </th>
+      <td mat-cell *matCellDef="let element" class="color-grey">
+        <mat-icon inline="true">{{element.actions ? 'mail share edit delete' : 'mail' }}</mat-icon>
+      </td>
+    </ng-container>
+
+    <ng-container matColumnDef="details">
+      <th mat-header-cell *matHeaderCellDef> </th>
+      <td mat-cell *matCellDef="let element"> <button mat-raised-button class="color-cadet-blue"
+          (click)="showItemDetails()">Details</button> </td>
+    </ng-container>
+
+    <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+    <tr mat-row *matRowDef="let row; columns: displayedColumns;" class="row-element"></tr>
+  </table>
+
+  <div *ngIf="resizeTable" class="left">
+    <div class="block">No description yet <span class="color-cadet-blue">Add Description</span></div>
+    <div *ngFor="let item of itemDetails">
+      <ul class="color-cadet-blue">{{ item }}</ul>
+    </div>
+  </div>
+
+</div>

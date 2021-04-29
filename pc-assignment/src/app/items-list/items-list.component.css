@@ -1,0 +1,22 @@
+.left {
+    float: left;
+}
+.total-width {
+    width: 100%;;
+}
+tr.row-element:not(.example-expanded-row):hover {
+    background: whitesmoke;
+}
+.color-cadet-blue {
+    color: #008fb3;
+}
+.color-grey {
+    color: grey;
+}
+.block {
+    width: 80%;
+    padding: 10px;
+    margin: 24px;
+    background-color: whitesmoke;
+    margin-left: 11%;
+}

@@ -1,0 +1,30 @@
+.tab-icon {
+    margin-right: 8px;
+  }
+.left {
+    float: left;
+}
+.total-width {
+    width: 100%;;
+}
+.search-full-width {
+  width: 100%;
+}
+:host ::ng-deep .mat-form-field-appearance-outline .mat-form-field-wrapper {
+  margin: -3px;
+  padding: 0px;
+  background-color: white;
+}
+:host ::ng-deep .mat-form-field-appearance-outline.mat-focused .mat-form-field-outline-thick {
+  color: #008fb3;
+}
+.tabs {
+  width: 60%;
+  background-color: whitesmoke;
+}
+.search {
+  width: 39%;
+  background-color: whitesmoke;
+}
+
+  
